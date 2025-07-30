@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>All Books</h1>
+
+    <% allappointments.forEach((oneappointment)=>{ %>
+        <div>
+            <h2>Title: <%= oneappointment.title %></h2>
+            <p>time: <%= oneappointment.price %></p>
+            <p>doctors:</p>
+            <ul>
+                <% oneappointment.doctor.forEach((onedoctor)=>{ %>
+                    <li><%= onedoctor.name %></li>
+                <% }) %>
+            </ul>
+            <a href="/appointments/<%= oneappointment._id %>">See Book Details</a>
+        </div>
+
+        <% }) %>
+</body>
+
+</html>
