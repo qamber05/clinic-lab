@@ -6,18 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Book Details</h1>
+    <h1>Appointment Details/h1>
 
-    <h2>Title: <%= foundappointment.title %></h2>
-    <p>Price: <%= foundappointment.price %></p>
-    <p> <%= foundappointment.rating %> Stars</p>
+    <h2>Title: <%= foundAppointment.title %></h2>
+    <p>Price: <%= foundAppointment.price %></p>
+    <p> <%= foundAppointment.rating %> Stars</p>
 
 
     <br>
     <br>
 
     <h3>Comments</h3>
-    <form action="/appointmnents/<%=foundBook._id %>/comment" method="post">
+    <form action="/appointments/<%=foundAppointment._id %>/comment" method="post">
         <label for="creator">Name:</label>
         <input id="creator" name="creator" type="text">
 
@@ -27,7 +27,7 @@
         <button>Submit Comment</button>
     </form>
 
-    <% foundappointment.comments.forEach((oneComment)=>{ %>
+    <% foundAppointment.comments.forEach((oneComment)=>{ %>
         <p><%= oneComment.content %></p>
         <p>- By <%= oneComment.creator %></p>
     <% }) %>

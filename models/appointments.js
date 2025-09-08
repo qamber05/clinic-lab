@@ -1,6 +1,6 @@
-
 const mongoose = require("mongoose")
-//const doctor = require(" ")
+const Doctor = require("./doctor")
+
 
 const commentSchema = new mongoose.Schema({
     creator: String,
@@ -8,25 +8,31 @@ const commentSchema = new mongoose.Schema({
 }, {timestamps:true})
 
 // Schema
-const appointmentsSchema = new mongoose.Schema({
-    pateint:{
+const appointmentSchema = new mongoose.Schema({
+    patientname:{
         type:String,
         required:true
     },
+    reason:{
+        type: Number,
+        min:0,
+        max:100
+    },
     date:{
-        type: Date,
+        type:Date,
+        
     },
     doctor:[{
         type: mongoose.Schema.Types.ObjectId,
-        ref:"doctor"
+        ref:"Doctor"
     }],
-    comments : [commentSchema]
+    comments: [commentSchema]
 })
 
 
 // model
-const appointments = mongoose.model("appointments",appointmentsSchema)
+const Appointment = mongoose.model("Appointment",appointmentSchema)
 
 
 // export the model
-module.exports = appointments
+module.exports = Appointmen

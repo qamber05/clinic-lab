@@ -6,32 +6,29 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Create a new appointments</h1>
+    <h1>Create a new Appointment</h1>
     <form action="/appointments" method="post">
 
         <label for="title">Title:</label>
         <input id="title" name="title" type="text">
 
-        <label for="time">time</label>
-        <input id="time" name="time" type="time">
+        <label for="price">Price</label>
+        <input id="price" name="price" type="number">
 
-        <label for="reason">reason:</label>
-        <input name="reason" id="reason" type="text">
-
-         <label for="notes">notes:</label>
-        <input name="notes" id="notes" type="text">        
+        <label for="rating">Rating:</label>
+        <input name="rating" id="rating" type="number">
 
 
-        <label for="doctor">doctor:</label>
+        <label for="doctor">Doctor:</label>
         <select multiple name="doctor" id="doctor">
-            <% alldoctors.forEach((onedoctor)=>{ %>
-                <option value="<%= onedoctor._id %>"><%= onedoctor.name %></option>
+            <% allAuthors.forEach((oneDoctor)=>{ %>
+                <option value="<%= oneDoctor._id %>"><%= oneDoctor.name %></option>
             <% }) %>
         </select>
 
         
 
-        <button>Create doctor</button>
+        <button>Create Author</button>
     </form>
 </body>
 </html>

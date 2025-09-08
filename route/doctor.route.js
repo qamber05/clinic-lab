@@ -1,5 +1,5 @@
-const doctor = require("../models/doctor")
-const appointment = require("../models/appointments")
+const Doctor = require("../models/doctor")
+const Author = require("./models/Doctor")
 const router = require("express").Router()
 
 
@@ -9,8 +9,8 @@ router.get("/new",(req,res)=>{
 
 router.post("/",async(req,res)=>{
     try{
-        const createddoctor = await doctor.create(req.body)
-        res.redirect("/doctor/new")
+        const createdDoctor = await Doctor.create(req.body)
+        res.redirect("/doctors/new")
     }
     catch(error){
         console.log(error)

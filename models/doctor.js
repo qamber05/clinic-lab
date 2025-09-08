@@ -1,17 +1,11 @@
 const mongoose = require("mongoose")
 
-const doctorSchemaor = new mongoose.Schema({
+const doctorSchema = new mongoose.Schema({
     name:{
         type:String
-    },
-    speciality: {
-        type:String
-    },
-    yearsOfExperience: {
-        type: Number
     }
 })
 
-const doctor = mongoose.model("doctor",doctorSchemaor)
+const Doctor = mongoose.model("Doctor",doctorSchema)
 
-module.exports = doctor
+module.exports = Doctor
